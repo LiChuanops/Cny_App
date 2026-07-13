@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>出入库管理</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>📦 出入库管理</h1>
+    <p class="sub">Cloudflare Pages + D1 · 简易库存系统</p>
+  </header>
+
+  <main>
+    <!-- 录入表单 -->
+    <section class="card">
+      <h2>录入记录</h2>
+      <form id="form">
+        <div class="row">
+          <label>
+            类型
+            <select name="type" id="type">
+              <option value="in">入库</option>
+              <option value="out">出库</option>
+            </select>
+          </label>
+          <label class="grow">
+            商品名称
+            <input type="text" name="item" id="item" placeholder="例如：螺丝 M4" required />
+          </label>
+          <label>
+            数量
+            <input type="number" name="qty" id="qty" min="1" step="1" value="1" required />
+          </label>
+        </div>
+        <label>
+          备注（可选）
+          <input type="text" name="note" id="note" placeholder="例如：A 供应商" />
+        </label>
+        <button type="submit" id="submit">提交</button>
+        <span id="msg" class="msg"></span>
+      </form>
+    </section>
+
+    <!-- 当前库存 -->
+    <section class="card">
+      <h2>当前库存</h2>
+      <table id="stock-table">
+        <thead>
+          <tr><th>商品</th><th>入库</th><th>出库</th><th>结存</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p class="empty" id="stock-empty">暂无数据</p>
+    </section>
+
+    <!-- 流水记录 -->
+    <section class="card">
+      <h2>最近流水</h2>
+      <table id="log-table">
+        <thead>
+          <tr><th>时间</th><th>类型</th><th>商品</th><th>数量</th><th>备注</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p class="empty" id="log-empty">暂无数据</p>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

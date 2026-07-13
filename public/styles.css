@@ -1,0 +1,77 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+  line-height: 1.5;
+  padding-bottom: 40px;
+}
+
+header {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff;
+  padding: 24px 20px;
+  text-align: center;
+}
+header h1 { font-size: 24px; }
+header .sub { opacity: .85; font-size: 13px; margin-top: 4px; }
+
+main {
+  max-width: 760px;
+  margin: 20px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+}
+.card h2 { font-size: 17px; margin-bottom: 14px; }
+
+form { display: flex; flex-direction: column; gap: 12px; }
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: #4b5563; }
+.grow { flex: 1; min-width: 160px; }
+
+input, select {
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+}
+input:focus, select:focus { outline: 2px solid #93c5fd; border-color: #93c5fd; }
+
+button {
+  align-self: flex-start;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 9px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+button:hover { background: #1d4ed8; }
+button:disabled { opacity: .6; cursor: not-allowed; }
+
+.msg { font-size: 13px; margin-left: 10px; }
+.msg.ok { color: #16a34a; }
+.msg.err { color: #dc2626; }
+
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #eef0f2; }
+th { color: #6b7280; font-weight: 600; font-size: 12px; }
+
+.tag { padding: 2px 8px; border-radius: 999px; font-size: 12px; }
+.tag.in  { background: #dcfce7; color: #15803d; }
+.tag.out { background: #fee2e2; color: #b91c1c; }
+.stock-neg { color: #dc2626; font-weight: 600; }
+
+.empty { color: #9ca3af; font-size: 13px; padding: 8px 0; }

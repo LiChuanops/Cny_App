@@ -1,0 +1,10 @@
+name = "inventory-app"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "public"
+
+# D1 数据库绑定。部署前用 `wrangler d1 create inventory-db` 创建，
+# 然后把返回的 database_id 填到下面。本地开发不需要真实 id。
+[[d1_databases]]
+binding = "DB"
+database_name = "inventory-db"
+database_id = "placeholder-填入真实ID后再部署"
